@@ -63,7 +63,7 @@ function getAge(birthday) {
     //Al recibir la fecha del mes a la fecha actual o si el mes es igual a la fecha actual y el dia es mayor a 
     //al dia actual hay que restarle 1 a la edad 
     
-    if(ageDate.getMonth > Date.now().getMonth){
+    if(ageDate.getMonth > Date.now().getMonth || (ageDate.getMonth == Date.now().getMonth && ageDate.getDate < Date.now().getDate)){
         return age - 1;
     }
     
