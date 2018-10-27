@@ -59,7 +59,15 @@ function getAge(birthday) {
     var ageDate = new Date(ageDifMs); // miliseconds from epoch
     var age = Math.abs(ageDate.getUTCFullYear() - 1970);
     
+    //Validando la fecha 
+    //Al recibir la fecha del mes a la fecha actual o si el mes es igual a la fecha actual y el dia es mayor a 
+    //al dia actual hay que restarle 1 a la edad 
     
+    if(ageDate.getMonth > Date.now().getMonth){
+        return age - 1;
+    }
+    
+    return age;
 }
 
 console.log("Average age %i", list.reduce((sum, {
